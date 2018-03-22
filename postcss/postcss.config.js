@@ -1,11 +1,13 @@
 /**
  * Author: JunJianSyu
  * Email: junjian1992@gmail.com
- * Date: 2018/3/21
+ * Date: 18/3/22
  */
-module.exports = {
+module.exports = (ctx) => ({
+    parser: false,
     plugins: [
-        require('precss'),
-        require('autoprefixer')
+        require('precss')(ctx.plugin),
+        require('postcss-import')(ctx.plugin),
+        require('cssnano')(ctx.plugin)
     ]
-}
+})

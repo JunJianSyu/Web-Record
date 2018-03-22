@@ -32,13 +32,23 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
-                    use: ['css-loader', 'postcss-loader', 'less-loader', 'px2rem-loader?remUnit=75&remPrecision=8']
+                    use: [
+                        {loader: 'css-loader', options: {importLoaders: 1}},
+                        {loader: 'postcss-loader'},
+                        {loader: 'px2rem-loader?remUnit=75&remPrecision=8'},   // px2rem 必须写在前面不然后续编译出错
+                        {loader: 'less-loader'}
+                    ],
+                    fallback: 'style-loader'
                 })
             }
         ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        contentBase: './dist'
     }
 }
