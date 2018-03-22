@@ -9,6 +9,9 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // issues webpack > 4.0.0 版本需 npm install --save-dev extract-text-webpack-plugin@next
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+// postcss.config.js 中配置插件，precss包含css最新postcss-preset-env特性的转换
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -19,6 +22,9 @@ module.exports = {
         new ExtractTextPlugin({
             filename: 'css/[name].css',
             allChunks: true
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '') + '/index.html'
         })
     ],
     module: {
@@ -26,7 +32,7 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
-                    use: ['css-loader', 'postcss-loader', 'less-loader']
+                    use: ['css-loader', 'postcss-loader', 'less-loader', 'px2rem-loader?remUnit=75&remPrecision=8']
                 })
             }
         ]
