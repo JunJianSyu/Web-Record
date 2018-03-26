@@ -1,0 +1,13 @@
+{
+    "root": true,
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "no-console": 0,
+        "quotes": [2, "single"],
+        "semi": ["error", "never"]
+    }
+}
