@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <title>居中</title>
+    <style type="text/css">
+        html { font: normal 14px/1.5 "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif; }
+        .container { width: 100%; height: 100%; overflow: hidden;}
+        .l-header { width: 100%; height: 80px; background: #f2fae3; border: 1px solid rgba(101,159,19,.3); box-sizing: border-box;}
+        .m-article { width: 50%; height: 40px; color: #659f13; line-height: 40px;}
+        /* 水平 */
+        .m-article { margin: 0 auto; text-align: center; }
+        /* 垂直 */
+        .l-header { display: flex; justify-content: center; align-items: center;}
+
+        .l-content { width: 100%; height: 80px; margin: 20px 0 0 0; background: #fffceb; border: 1px solid rgba(226,131,39,.3); box-sizing: border-box;}
+        .m-content { height: 40px; color: #e28327; line-height: 40px;}
+
+        /* 水平垂直 */
+        .l-content { display: table;}
+        .m-content { display: table-cell; text-align: center; vertical-align: middle;}
+
+        .l-box { width: 100%; height: 80px; margin: 20px 0 0 0; background: #fff1f0; border: 1px solid rgba(216,80,48,.3); box-sizing: border-box;}
+        .m-box { width: 50%; height: 40px; color: #d85030; line-height: 40px; text-align: center; }
+
+        /* 水平垂直 */
+        .l-box { position: relative;}
+        .m-box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)}
+
+        .l-inline-box {width: 100%; height: 80px; margin: 20px 0 0 0; text-align: center; background: #f2fae3; border: 1px solid rgba(101,159,19,.3); box-sizing: border-box;}
+        .m-inline { display: inline-block; vertical-align: middle;}
+        .s-perch-inline { display: inline-block; vertical-align: middle; height: inherit; font-size: 0;}
+    </style>
+</head>
+<body>
+    <section class="container">
+        <header class="l-header">
+            <article class="m-article">我是头部居中的块</article>
+        </header>
+
+        <section class="l-content">
+            <article class="m-content">我是内容居中的块</article>
+        </section>
+
+        <section class="l-box">
+            <article class="m-box">我是盒子里面的内容</article>
+        </section>
+
+        <section class="l-inline-box">
+            <span class="m-inline">我是行内内容</span>
+            <span class="s-perch-inline">我是一个占位的</span>
+        </section>
+    </section>
+</body>
+</html>

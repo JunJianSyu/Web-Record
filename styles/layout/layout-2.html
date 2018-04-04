@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左右固定中间弹性</title>
+    <style>
+        * {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            color: #666;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .l-top {
+            width: 100%;
+            height: 60px;
+            border: #ccc solid 1px;
+        }
+        .l-main {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+        .main-left {
+            width: 200px;
+            height: 100%;
+            float: left;
+            border: red solid 1px;
+        }
+        .main-content {
+            margin: 0 200px 0 200px;
+            height: 100%;
+            overflow: auto;
+            border: green solid 1px;
+            display: flex;
+        }
+        .main-right {
+            float: right;
+            width: 200px;
+            height: 100%;
+            border: purple solid 1px;
+        }
+        .c-left {
+            flex: 1;
+            background: aqua;
+        }
+        .c-center {
+            flex: 1;
+            background: cornflowerblue;
+        }
+        .c-right {
+            flex: 1;
+            background: gold;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="l-top">top</div>
+    <div class="l-main">
+        <div class="main-left">left</div>
+        <div class="main-right">right</div>
+        <div class="main-content">
+            <div class="c-left"></div>
+            <div class="c-center"></div>
+            <div class="c-right"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

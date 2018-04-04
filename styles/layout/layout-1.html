@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>top、buttom固定左侧栏固定宽度内容自动</title>
+    <style type="text/css">
+        * {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            color: #666;
+            box-sizing: border-box;
+        }
+        .wrap {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        .l-top {
+            width: 100%;
+            height: 60px;
+            border: #ccc solid 1px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .l-main {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 40px;
+            overflow: hidden;
+        }
+        .l-main .l-main-nav {
+            width: 200px;
+            height: 100%;
+            float: left;
+            border: green solid 1px;
+        }
+        .l-main .l-main-content {
+            padding-left: 200px;
+            height: 100%;
+            border: palevioletred solid 1px;
+        }
+        .l-bottom {
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            width: 100%;
+            height: 38px;
+            border: red solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="l-top">Top</div>
+        <div class="l-main">
+            <div class="l-main-nav">Nav</div>
+            <div class="l-main-content">Content</div>
+        </div>
+        <div class="l-bottom">Footer</div>
+    </div>
+</body>
+</html>

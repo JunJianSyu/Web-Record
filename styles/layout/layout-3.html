@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex分栏布局</title>
+    <style type="text/css">
+        * {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            color: #666;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .l-top {
+            width: 100%;
+            height: 60px;
+            border: #ccc solid 1px;
+        }
+        .l-main {
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            overflow: hidden;
+        }
+        .main-item {
+            border: red solid 1px;
+            border-right: 0;
+            flex: 1;
+        }
+        .w2 {
+            flex: none;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="l-top">Top</div>
+        <div class="l-main">
+            <div class="w2 main-item">left</div>
+            <div class="main-item">content</div>
+            <div class="w2 main-item">right</div>
+        </div>
+    </div>
+</body>
+</html>

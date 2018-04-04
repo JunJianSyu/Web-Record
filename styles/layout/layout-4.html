@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid布局</title>
+    <style type="text/css">
+        * {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            color: #666;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .wrap {
+            /* 栅格布局 */
+            display: grid;
+            /* 2列 左边固定200px 右边自动  fr叫做弹性尺寸 */
+            grid-template-columns: minmax(auto, 200px) 1fr 1fr;
+            /* 3行 上50 中(最小500px, 最大 84vh) 下50 */
+            grid-template-rows: 40px minmax(400px, 600px) 40px;
+        }
+        .one {
+            background: aqua;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .two {
+            background: palevioletred;
+            grid-column: 1
+        }
+        .three {
+            background: teal;
+            grid-column: 2
+        }
+        .four {
+            background: purple;
+            grid-column: 3 / 4;
+        }
+        .five {
+            background: cornflowerblue;
+            grid-column: 1 / 4;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+    <div class="three">Three</div>
+    <div class="four">Four</div>
+    <div class="five">Five</div>
+</div>
+</body>
+</html>
