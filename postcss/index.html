@@ -6,5 +6,26 @@
 </head>
 <body>
     <div id="app"></div>
+
+    <div class="readFiles">
+        <input type="file" onchange="readFile(this.files)">
+    </div>
+
+<script type="text/javascript">
+    function readFile(files) {
+        if (files.length) {
+            var file = files[0]
+            if (file.name.indexOf('.pub') > -1) {
+                var render = new FileReader()
+                render.addEventListener('load', function () {
+                    console.log(this.result)
+                })
+                render.readAsText(file)
+            } else {
+                alert('文件不是ssh公钥')
+            }
+        }
+    }
+</script>
 </body>
 </html>

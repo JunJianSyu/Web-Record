@@ -4,7 +4,7 @@
  * Date: 2018/3/21
  */
 
-const webpack = require('webpack')
+const webpack = require('webpack')   // webpack 可引用自带插件
 // 不推荐全局安装webpack 版本4.2.0需要安装weboack-cli 来替换shell 依旧是本地安装 不推荐全局
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
